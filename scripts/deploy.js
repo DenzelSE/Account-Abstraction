@@ -5,6 +5,10 @@ async function main() {
     // await EP.waitForDeployment();
     // console.log(`EP deployed to ${EP.target}`);
 
+    const Paymaster = await hre.ethers.deployContract("Paymaster");
+    await Paymaster.waitForDeployment();
+    console.log(`Paymaster deployed to ${Paymaster.target}`);
+
     const Factory = await hre.ethers.deployContract("AccountFactory");
     await Factory.waitForDeployment();
     console.log(`Factory deployed to ${Factory.target}`);
@@ -12,6 +16,7 @@ async function main() {
     const Count = await hre.ethers.deployContract("Counter");
     await Count.waitForDeployment();
     console.log(`Count deployed to ${Count.target}`);
+
 
 
 }
