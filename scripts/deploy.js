@@ -18,7 +18,6 @@ async function main() {
     console.log(`Count deployed to ${Count.target}`);
 
 
-
 }
 
 main().catch((error) => {

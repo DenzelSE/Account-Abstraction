@@ -1,7 +1,8 @@
 const hre = require("hardhat");
 
 const EP_address = "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"
-const AF_address = "0x36aA4C333d66e5760Fd20Eb7B2958ee6B5a96Bc6"
+const CELO_PM_address = "0x0000000071727de22e5e9d8baf0edac6f37da032"
+// const AF_address = "0x36aA4C333d66e5760Fd20Eb7B2958ee6B5a96Bc6"
 const PM_address = "0xf718E2E350188a3B4a06A4eb03a749181a77CD3E"
 const COUNT_address = "0xAFE0926e3dcF9d0d81Ef8E0d51FA068F43cd5060"
 const Token_address = "0x640ba6878C2B85E9038689fC1D7eC06A71ECE0d5"
@@ -16,7 +17,8 @@ async function main() {
     // console.log(`Account deployed to ${Account1.target}`);
 
     const AccountFactory = await hre.ethers.getContractFactory("AccountFactory");
-    const EntryPoint = await hre.ethers.getContractAt("EntryPoint", EP_address);
+    const EntryPoint = await hre.ethers.getContractAt("EntryPoint", EP_address
+    );
     const COUNTER_CONTRACT = await hre.ethers.getContractAt("Counter", COUNT_address);
     const Account = await hre.ethers.getContractFactory("Account");
     const Token_contract = await hre.ethers.getContractAt("TokenABC", Token_address);
@@ -86,8 +88,8 @@ async function main() {
     console.log("txHash: ", txHash)
 }
     // Checking to see if external contract function was actually called
-    const count = await COUNTER_CONTRACT.count()
-    console.log(count.toString(), 'is the count')
+    // const count = await COUNTER_CONTRACT.count()
+    // console.log(count.toString(), 'is the count')
 
 }
 
